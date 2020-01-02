@@ -1,3 +1,7 @@
+{
+  publish with BSD Licence.
+	Copyright (c) Terry Lao
+}
 unit iLbcCodec;
 interface
 uses
@@ -142,11 +146,11 @@ function encode(   { (o) Number of bytes encoded }
    encoded_DataByteSize:cardinal;
    data:PAshort;                 { (i) The signal block to encode}
    dataByteCount:cardinal
-):cardinal;{¦^¶Çªº¬Obyte ¼Æ, ´«¦¨short int ­n°£ 2}
+):cardinal;{å›å‚³çš„æ˜¯byte æ•¸, æ›æˆshort int è¦é™¤ 2}
 var
    block:array [0..BLOCKL_MAX-1] of real;
    k,i,j:integer;
-begin//240 ­Óshort int(480 bytes) À£¦¨25 ­Óshort int(50 ­Óbyte)
+begin//240 å€‹short int(480 bytes) å£“æˆ25 å€‹short int(50 å€‹byte)
 	j:=dataByteCount div sizeof(short);
 	j:=j - (j mod iLBCenc_inst^.blockl);
 	i:=0;
@@ -188,7 +192,7 @@ function decode(       { (o) Number of decoded samples }
    encoded_data:PAshort;        { (i) Encoded bytes }
    encodedByteCount:cardinal;
    mode:Smallint                       { (i) 0:=PL, 1:=Normal }
-):cardinal;{return ªº¬Oshort int ªº¼Æ¥Ø, ´«¦¨byte ­n­¼ 2}
+):cardinal;{return çš„æ˜¯short int çš„æ•¸ç›®, æ›æˆbyte è¦ä¹˜ 2}
 var
    k,i,j:integer;
    decblock:array [0..BLOCKL_MAX-1] of real;
@@ -202,7 +206,7 @@ begin
 		result:=0;
 		exit;
 	end;
-	//50 ­Óbyte §Y25 bytes --> 240 ­Óshort int§Y480 bytes
+	//50 å€‹byte å³25 bytes --> 240 å€‹short intå³480 bytes
 	{ do actual decoding of block }
 	j:=encodedByteCount div 2;
 	i:=0;
