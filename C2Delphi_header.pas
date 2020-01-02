@@ -1,3 +1,7 @@
+{
+  publish with BSD Licence.
+	Copyright (c) Terry Lao
+}
 unit C2Delphi_header;
 
 {$MODE Delphi}
